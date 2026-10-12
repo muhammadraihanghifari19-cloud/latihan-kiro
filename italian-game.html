@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Italian Game — Chess Openings</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><span class="logo-icon">♟</span><span class="logo-text">ChessOpen</span></a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ruy-lopez.html">Ruy Lopez</a></li>
+        <li><a href="italian-game.html" class="active">Italian Game</a></li>
+        <li><a href="queens-gambit.html">Queen's Gambit</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="opening-hero">
+    <div class="opening-hero-inner">
+      <div class="opening-hero-content">
+        <span class="badge">Opening Pemula • 1.e4</span>
+        <h1>Italian Game</h1>
+        <div class="notation-big">1.e4 e5 &nbsp; 2.Nf3 Nc6 &nbsp; 3.Bc4</div>
+        <p>Opening yang sempurna untuk pemula karena prinsipnya sangat sesuai dengan aturan dasar opening: kuasai pusat, kembangkan figur, amankan raja. Gajah di c4 mengincar langsung kotak f7 — titik terlemah di barisan hitam di awal permainan.</p>
+        <div class="meta-row">
+          <div class="meta-item"><span class="label">Juga Dikenal Sebagai</span><span class="value">Giuoco Piano / Giuoco Pianissimo</span></div>
+          <div class="meta-item"><span class="label">Tingkat Kesulitan</span><span class="value">★★☆☆☆ Pemula</span></div>
+          <div class="meta-item"><span class="label">Gaya</span><span class="value">Taktis & Langsung</span></div>
+        </div>
+      </div>
+      <div id="heroItalianBoard"></div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE BOARD -->
+  <section class="board-section">
+    <div class="board-section-inner">
+      <div class="board-area">
+        <div class="board-wrapper">
+          <div id="mainBoard"></div>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="board-controls">
+          <button class="ctrl-btn" id="btnReset">⏮</button>
+          <button class="ctrl-btn" id="btnPrev">◀</button>
+          <button class="ctrl-btn" id="btnPlay">▶ Play</button>
+          <button class="ctrl-btn" id="btnNext">▶</button>
+          <button class="ctrl-btn" id="btnEnd">⏭</button>
+          <span class="move-counter" id="moveCounter">0 / 0</span>
+        </div>
+        <div class="variations">
+          <div class="var-tabs" id="varTabs">
+            <button class="var-tab active" data-var="main">Main Line</button>
+            <button class="var-tab" data-var="giuoco">Giuoco Piano</button>
+            <button class="var-tab" data-var="pianissimo">Pianissimo</button>
+            <button class="var-tab" data-var="fried_liver">Fried Liver Attack</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="moves-panel">
+        <h3>Daftar Gerakan</h3>
+        <div class="move-list" id="moveList"></div>
+        <div class="move-annotation" id="moveAnnotation"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRATEGI -->
+  <section class="info-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Strategi</span>
+        <h2>Ide & Rencana Utama Italian Game</h2>
+        <p>Italian Game disukai pemula karena idenya intuitif dan tujuannya jelas sejak gerakan pertama.</p>
+      </div>
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-card-icon">🎯</div>
+          <h4>Target: Kotak f7!</h4>
+          <p>Gajah di c4 mengincar kotak f7 yang hanya dijaga oleh raja hitam. Jika hitam tidak berhati-hati, kombinasi taktis seperti Scholar's Mate atau Fried Liver Attack bisa menjadi mematikan.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">⚡</div>
+          <h4>Pengembangan Cepat</h4>
+          <p>Ide utama Italian Game adalah mengembangkan semua figur secepat mungkin. Dalam 4-5 gerakan, putih sudah memiliki dua figur aktif, bidak kuat di pusat, dan siap rokade.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🔥</div>
+          <h4>Fried Liver Attack</h4>
+          <p>Salah satu serangan paling mengerikan untuk hitam pemula: 1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5 6.Nxf7! Pengorbanan kuda yang memaksa raja hitam berjalan ke tengah!</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🏰</div>
+          <h4>Rencana Putih Umum</h4>
+          <ul>
+            <li>Kembangkan kuda ke f3 dan gajah ke c4</li>
+            <li>Rokade sisi raja dengan cepat</li>
+            <li>Dorong bidak d3 atau d4 untuk membuka pusat</li>
+            <li>Serang dengan Ng5 atau ratu aktif</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🛡️</div>
+          <h4>Pertahanan Hitam Terbaik</h4>
+          <ul>
+            <li><strong>3...Bc5</strong> — Classical / Two Knights Defense</li>
+            <li><strong>3...Nf6</strong> — Two Knights Defense</li>
+            <li><strong>3...Be7</strong> — Hungarian Defense (sangat solid)</li>
+            <li><strong>3...d6</strong> — Slow but solid</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">⭐</div>
+          <h4>Mengapa Cocok untuk Pemula?</h4>
+          <ul>
+            <li>Prinsipnya sangat sesuai dengan aturan dasar</li>
+            <li>Banyak jebakan taktis yang bisa dipelajari</li>
+            <li>Posisinya sering terbuka dan tajam</li>
+            <li>Mudah memahami rencana jangka panjang</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEJARAH -->
+  <section class="history-section">
+    <div class="history-inner">
+      <div class="section-header" style="text-align:left">
+        <span class="section-tag">Sejarah</span>
+        <h2>Asal Usul Italian Game</h2>
+      </div>
+      <p>Italian Game atau "Giuoco Piano" (artinya "permainan tenang" dalam bahasa Italia) adalah salah satu opening tertua yang tercatat dalam sejarah catur modern. Pertama kali dianalisis oleh ahli-ahli catur Italia pada abad ke-15 dan ke-16, khususnya oleh Giulio Polerio dan Gioachino Greco.</p>
+      <p>Gioachino Greco (1600-1634), seorang pemain catur Italia yang legendaris, membuat banyak catatan analisis opening ini dan menyebarkannya ke seluruh Eropa. Ia mendemonstrasikan bagaimana gajah di c4 bisa menciptakan ancaman-ancaman mematikan terhadap raja hitam.</p>
+      <blockquote>"Gajah di c4 adalah senjata yang paling tajam di opening — ia mengancam sang raja bahkan sebelum permainan benar-benar dimulai." — Filosofi Italian Game</blockquote>
+      <p>Setelah sempat kurang populer di abad ke-20 karena dianggap terlalu tenang, Italian Game mengalami kebangkitan besar di era modern. Pemain top seperti Magnus Carlsen, Fabiano Caruana, dan banyak Grandmaster lainnya kembali menggunakannya secara reguler karena ternyata menyimpan kedalaman strategis yang besar.</p>
+    </div>
+  </section>
+
+  <!-- PARTAI TERKENAL -->
+  <section class="famous-games">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Partai Legendaris</span>
+        <h2>Partai Terkenal dengan Italian Game</h2>
+      </div>
+      <div class="games-grid">
+        <div class="game-card">
+          <p class="game-meta">1620 • Greco's Games</p>
+          <h4>Greco vs NN — "The Immortal Giuoco"</h4>
+          <p>Gioachino Greco mendokumentasikan serangkaian kombinasi brillian dari posisi Italian Game. Partai-partainya menjadi referensi paling awal tentang serangan taktis dari opening ini.</p>
+        </div>
+        <div class="game-card">
+          <p class="game-meta">2018 • Sinquefield Cup</p>
+          <h4>Carlsen vs Caruana</h4>
+          <p>Magnus Carlsen menggunakan Italian Game dalam pertandingan melawan Fabiano Caruana, membuktikan bahwa opening "pemula" ini ternyata memiliki kedalaman yang cocok untuk level tertinggi dunia.</p>
+        </div>
+        <div class="game-card">
+          <p class="game-meta">Modern Era</p>
+          <h4>The Fried Liver Attack</h4>
+          <p>Ribuan partai online dimainkan dengan variasi Fried Liver Attack — pengorbanan kuda di f7 yang memaksa raja hitam keluar ke tengah papan dan menghadapi serangan yang dahsyat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NAVIGASI -->
+  <div class="next-opening">
+    <div class="next-inner">
+      <a href="ruy-lopez.html" class="back-home">← Ruy Lopez</a>
+      <a href="queens-gambit.html" class="btn btn-primary">Opening Berikutnya: Queen's Gambit →</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 ChessOpen — Panduan Opening Catur untuk Pemula</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/chess-board.js"></script>
+  <script src="assets/js/italian-game.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

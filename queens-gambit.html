@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Queen's Gambit — Chess Openings</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><span class="logo-icon">♟</span><span class="logo-text">ChessOpen</span></a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ruy-lopez.html">Ruy Lopez</a></li>
+        <li><a href="italian-game.html">Italian Game</a></li>
+        <li><a href="queens-gambit.html" class="active">Queen's Gambit</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="opening-hero">
+    <div class="opening-hero-inner">
+      <div class="opening-hero-content">
+        <span class="badge">Opening Positional • 1.d4</span>
+        <h1>Queen's Gambit</h1>
+        <div class="notation-big">1.d4 d5 &nbsp; 2.c4</div>
+        <p>Opening paling terkenal berbasis d4 dan salah satu yang paling dimainkan di level dunia. Putih menawarkan "gambit" — pengorbanan bidak c4 — untuk mendapatkan kontrol pusat yang superior. Menjadi sangat terkenal di kalangan awam setelah serial Netflix "The Queen's Gambit" (2020).</p>
+        <div class="meta-row">
+          <div class="meta-item"><span class="label">Tipe</span><span class="value">Queen's Pawn Opening</span></div>
+          <div class="meta-item"><span class="label">Tingkat Kesulitan</span><span class="value">★★★☆☆ Menengah</span></div>
+          <div class="meta-item"><span class="label">Gaya</span><span class="value">Solid & Positional</span></div>
+        </div>
+      </div>
+      <div id="heroQueensBoard"></div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE BOARD -->
+  <section class="board-section">
+    <div class="board-section-inner">
+      <div class="board-area">
+        <div class="board-wrapper">
+          <div id="mainBoard"></div>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="board-controls">
+          <button class="ctrl-btn" id="btnReset">⏮</button>
+          <button class="ctrl-btn" id="btnPrev">◀</button>
+          <button class="ctrl-btn" id="btnPlay">▶ Play</button>
+          <button class="ctrl-btn" id="btnNext">▶</button>
+          <button class="ctrl-btn" id="btnEnd">⏭</button>
+          <span class="move-counter" id="moveCounter">0 / 0</span>
+        </div>
+        <div class="variations">
+          <div class="var-tabs" id="varTabs">
+            <button class="var-tab active" data-var="main">Main Line</button>
+            <button class="var-tab" data-var="accepted">QGA — Accepted</button>
+            <button class="var-tab" data-var="declined">QGD — Declined</button>
+            <button class="var-tab" data-var="slav">Slav Defense</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="moves-panel">
+        <h3>Daftar Gerakan</h3>
+        <div class="move-list" id="moveList"></div>
+        <div class="move-annotation" id="moveAnnotation"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRATEGI -->
+  <section class="info-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Strategi</span>
+        <h2>Ide & Rencana Utama Queen's Gambit</h2>
+        <p>Queen's Gambit adalah tentang kontrol pusat, aktivitas bidak, dan permainan positional yang solid.</p>
+      </div>
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-card-icon">🎲</div>
+          <h4>Gambit yang Bukan Gambit?</h4>
+          <p>Menariknya, Queen's Gambit sebenarnya bukan gambit "betulan"! Jika hitam mengambil bidak c4, putih bisa mendapatkannya kembali dengan mudah. Ini lebih kepada pengalihan perhatian hitam.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">♛</div>
+          <h4>Kontrol Pusat Superior</h4>
+          <p>Dengan 1.d4 d5 2.c4, putih mendapat dua bidak di pusat (d4 dan c4 mengarah ke d5), sementara hitam hanya memiliki satu. Ini memberikan putih keunggulan ruang yang signifikan.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">⚡</div>
+          <h4>Accepted vs Declined</h4>
+          <p>Hitam punya dua pilihan utama: menerima gambit (2...dxc4) yang disebut QGA, atau menolaknya (2...e6 atau 2...c6) yang disebut QGD. Keduanya memiliki karakter permainan yang sangat berbeda.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🏰</div>
+          <h4>Rencana Putih Umum</h4>
+          <ul>
+            <li>Kembangkan kuda ke f3 dan c3</li>
+            <li>Kembangkan gajah ke f4 atau g5</li>
+            <li>Rokade sisi raja</li>
+            <li>Buka kolom c atau e di midgame</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🛡️</div>
+          <h4>Pilihan Hitam</h4>
+          <ul>
+            <li><strong>2...dxc4</strong> — QGA: menerima gambit, permainan terbuka</li>
+            <li><strong>2...e6</strong> — QGD: menolak, solid dan tenang</li>
+            <li><strong>2...c6</strong> — Slav Defense: sangat solid</li>
+            <li><strong>2...Nf6</strong> — variasi lain yang dinamis</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🌟</div>
+          <h4>Popularitas Modern</h4>
+          <ul>
+            <li>Dimainkan oleh semua World Champion</li>
+            <li>Booming setelah serial Netflix 2020</li>
+            <li>Cocok untuk pemain yang suka permainan solid</li>
+            <li>Fundamental positional yang bisa dipelajari pemula</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEJARAH -->
+  <section class="history-section">
+    <div class="history-inner">
+      <div class="section-header" style="text-align:left">
+        <span class="section-tag">Sejarah</span>
+        <h2>Asal Usul Queen's Gambit</h2>
+      </div>
+      <p>Queen's Gambit adalah salah satu opening tertua dalam sejarah catur, dengan catatan pertama yang muncul dalam manuskrip catur dari Göttingen, Jerman, sekitar tahun 1490. Opening ini kemudian dianalisis lebih lanjut oleh berbagai ahli catur selama berabad-abad.</p>
+      <p>Pada abad ke-19, opening ini mulai mendapatkan perhatian serius dari pemain top dunia. Wilhelm Steinitz, juara dunia pertama, menggunakannya secara reguler. Pada awal abad ke-20, banyak turnamen bergengsi didominasi oleh opening ini.</p>
+      <blockquote>"Queen's Gambit adalah ujian sejati kepribadian seorang pemain catur — apakah Anda seorang pejuang yang menerima tantangan, atau strateg yang memilih jalan solid?" — Filosofi Queen's Gambit</blockquote>
+      <p>Di era kontemporer, Queen's Gambit mengalami ledakan popularitas yang belum pernah terjadi sebelumnya berkat serial mini Netflix "The Queen's Gambit" (2020) yang dibintangi Anya Taylor-Joy. Serial ini memperkenalkan catur kepada jutaan orang baru di seluruh dunia dan membuat penjualan set catur melonjak drastis.</p>
+      <p>Para juara dunia modern seperti Magnus Carlsen, Viswanathan Anand, dan Vladimir Kramnik semuanya memiliki keahlian mendalam di Queen's Gambit, baik sebagai putih maupun hitam.</p>
+    </div>
+  </section>
+
+  <!-- PARTAI TERKENAL -->
+  <section class="famous-games">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Partai Legendaris</span>
+        <h2>Partai Terkenal dengan Queen's Gambit</h2>
+      </div>
+      <div class="games-grid">
+        <div class="game-card">
+          <p class="game-meta">1927 • World Championship</p>
+          <h4>Capablanca vs Alekhine</h4>
+          <p>Jose Raul Capablanca dan Alexander Alekhine memainkan Queen's Gambit Declined dalam pertandingan kejuaraan dunia yang legendaris. Pertandingan yang menampilkan keindahan permainan positional.</p>
+        </div>
+        <div class="game-card">
+          <p class="game-meta">1997 • IBM Deep Blue Match</p>
+          <h4>Kasparov vs Deep Blue, Game 2</h4>
+          <p>Dalam pertandingan bersejarah melawan komputer Deep Blue, Kasparov menghadapi Queen's Gambit dan kalah dalam partai ke-2. Partai ini menjadi salah satu yang paling dianalisis dalam sejarah.</p>
+        </div>
+        <div class="game-card">
+          <p class="game-meta">2008 • World Championship</p>
+          <h4>Kramnik vs Anand</h4>
+          <p>Vladimir Kramnik menggunakan Queen's Gambit sebagai senjata utama melawan Viswanathan Anand dalam pertandingan kejuaraan dunia, mendemonstrasikan kedalaman opening ini di level tertinggi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NAVIGASI -->
+  <div class="next-opening">
+    <div class="next-inner">
+      <a href="italian-game.html" class="back-home">← Italian Game</a>
+      <a href="index.html" class="btn btn-primary">Kembali ke Home ♟</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 ChessOpen — Panduan Opening Catur untuk Pemula</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/chess-board.js"></script>
+  <script src="assets/js/queens-gambit.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

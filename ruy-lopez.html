@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ruy Lopez — Chess Openings</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><span class="logo-icon">♟</span><span class="logo-text">ChessOpen</span></a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ruy-lopez.html" class="active">Ruy Lopez</a></li>
+        <li><a href="italian-game.html">Italian Game</a></li>
+        <li><a href="queens-gambit.html">Queen's Gambit</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="opening-hero">
+    <div class="opening-hero-inner">
+      <div class="opening-hero-content">
+        <span class="badge">Opening Klasik • 1.e4</span>
+        <h1>Ruy Lopez</h1>
+        <div class="notation-big">1.e4 e5 &nbsp; 2.Nf3 Nc6 &nbsp; 3.Bb5</div>
+        <p>Salah satu opening tertua dan paling dalam dipelajari dalam sejarah catur. Dinamai dari Ruy López de Segura, seorang pendeta Spanyol yang menganalisisnya pada tahun 1561. Tujuan utamanya adalah menekan kuda c6 yang mempertahankan bidak e5 hitam, menciptakan ketegangan strategis jangka panjang.</p>
+        <div class="meta-row">
+          <div class="meta-item"><span class="label">Juga Dikenal Sebagai</span><span class="value">Spanish Opening / Spanish Game</span></div>
+          <div class="meta-item"><span class="label">Tingkat Kesulitan</span><span class="value">★★★☆☆ Menengah</span></div>
+          <div class="meta-item"><span class="label">Gaya</span><span class="value">Agresif & Strategis</span></div>
+        </div>
+      </div>
+      <div id="heroRuyBoard"></div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE BOARD -->
+  <section class="board-section">
+    <div class="board-section-inner">
+      <div class="board-area">
+        <div class="board-wrapper">
+          <div id="mainBoard"></div>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="board-controls">
+          <button class="ctrl-btn" id="btnReset" data-tooltip="Posisi Awal">⏮</button>
+          <button class="ctrl-btn" id="btnPrev"  data-tooltip="Sebelumnya">◀</button>
+          <button class="ctrl-btn" id="btnPlay"  data-tooltip="Auto Play">▶ Play</button>
+          <button class="ctrl-btn" id="btnNext"  data-tooltip="Selanjutnya">▶</button>
+          <button class="ctrl-btn" id="btnEnd"   data-tooltip="Akhir">⏭</button>
+          <span class="move-counter" id="moveCounter">0 / 0</span>
+        </div>
+        <!-- Variation selector -->
+        <div class="variations">
+          <div class="var-tabs" id="varTabs">
+            <button class="var-tab active" data-var="main">Main Line</button>
+            <button class="var-tab" data-var="closed">Closed Variation</button>
+            <button class="var-tab" data-var="open">Open Variation</button>
+            <button class="var-tab" data-var="berlin">Berlin Defense</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="moves-panel">
+        <h3>Daftar Gerakan</h3>
+        <div class="move-list" id="moveList"></div>
+        <div class="move-annotation" id="moveAnnotation"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRATEGI & INFO -->
+  <section class="info-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Strategi</span>
+        <h2>Ide & Rencana Utama Ruy Lopez</h2>
+        <p>Memahami ide di balik setiap gerakan jauh lebih penting daripada menghafal urutan gerakan.</p>
+      </div>
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-card-icon">♟</div>
+          <h4>Ancaman 3.Bb5</h4>
+          <p>Gajah di b5 tidak langsung memakan apa pun. Ia <em>mengancam</em> untuk memenangkan bidak e5 dengan cara: 4.Bxc6 dxc6 5.Nxe5. Ini memaksa hitam merespons dengan hati-hati.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">⚡</div>
+          <h4>Tekanan Jangka Panjang</h4>
+          <p>Ruy Lopez bukan tentang kemenangan cepat. Putih membangun keunggulan positional secara bertahap — mengkontrol pusat, membatasi kuda hitam, dan menciptakan target lemah di posisi hitam.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🏰</div>
+          <h4>Rencana Putih Umum</h4>
+          <ul>
+            <li>Lakukan rokade sisi raja (0-0)</li>
+            <li>Pindahkan gajah ke c2 (Bc2)</li>
+            <li>Dorong bidak d4 untuk membuka pusat</li>
+            <li>Aktivkan benteng di kolom d dan e</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🛡️</div>
+          <h4>Pertahanan Hitam Umum</h4>
+          <ul>
+            <li><strong>3...a6</strong> — Morphy Defense (paling populer)</li>
+            <li><strong>3...Nf6</strong> — Berlin Defense (sangat solid)</li>
+            <li><strong>3...d6</strong> — Steinitz Defense</li>
+            <li><strong>3...Bc5</strong> — Classical Variation</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">⚔️</div>
+          <h4>Kelebihan Ruy Lopez</h4>
+          <ul>
+            <li>Menciptakan ketidakseimbangan yang kompleks</li>
+            <li>Banyak dipelajari oleh Grandmaster dunia</li>
+            <li>Putih mempertahankan keunggulan yang konsisten</li>
+            <li>Sangat kaya akan variasi dan ide</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">⚠️</div>
+          <h4>Kekurangan Ruy Lopez</h4>
+          <ul>
+            <li>Butuh pengetahuan teori yang cukup luas</li>
+            <li>Hitam memiliki banyak pilihan pertahanan solid</li>
+            <li>Tidak cocok jika ingin kemenangan cepat</li>
+            <li>Berlin Defense bisa sangat membosankan</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEJARAH -->
+  <section class="history-section">
+    <div class="history-inner">
+      <div class="section-header" style="text-align:left">
+        <span class="section-tag">Sejarah</span>
+        <h2>Asal Usul Ruy Lopez</h2>
+      </div>
+      <p>Ruy López de Segura adalah seorang imam Katolik Spanyol yang juga merupakan pemain catur terbaik di zamannya. Pada tahun 1561, ia menerbitkan buku catur berjudul <em>"Libro de la invención liberal y arte del juego del axedrez"</em> — salah satu buku catur paling berpengaruh dalam sejarah.</p>
+      <p>Dalam buku tersebut, ia menganalisis secara mendalam opening yang kini menyandang namanya. Ia menganjurkan gerakan 3.Bb5 karena menurutnya gajah tersebut dapat "membunuh" kuda hitam di c6 yang mendukung bidak pusat e5.</p>
+      <blockquote>"Gajah di b5 seperti seorang bangsawan yang menekan pion pemberani dari kejauhan, menciptakan kekhawatiran abadi bagi sang raja hitam." — Diilhami analisis Ruy López</blockquote>
+      <p>Opening ini mengalami masa kejayaannya di era modern berkat para Grandmaster seperti Bobby Fischer, Anatoly Karpov, Gary Kasparov, dan Magnus Carlsen yang sering memainkannya di turnamen level tertinggi.</p>
+      <p>Bahkan hingga hari ini, Ruy Lopez tetap menjadi senjata utama pemain kelas dunia. Ia dianggap sebagai ujian sesungguhnya kemampuan catur karena kedalaman strateginya yang hampir tak terbatas.</p>
+    </div>
+  </section>
+
+  <!-- PARTAI TERKENAL -->
+  <section class="famous-games">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Partai Legendaris</span>
+        <h2>Partai Terkenal dengan Ruy Lopez</h2>
+      </div>
+      <div class="games-grid">
+        <div class="game-card">
+          <p class="game-meta">1972 • World Championship</p>
+          <h4>Fischer vs Spassky, Game 6</h4>
+          <p>Bobby Fischer memainkan Ruy Lopez dengan sangat indah dan memenangkan partai yang kemudian dijuluki "Partai Terbaik Abad Ini". Fischer mendemonstrasikan tekanan positional yang sempurna.</p>
+        </div>
+        <div class="game-card">
+          <p class="game-meta">1985 • World Championship</p>
+          <h4>Kasparov vs Karpov, Game 16</h4>
+          <p>Dalam pertandingan juara dunia, Kasparov menggunakan Ruy Lopez untuk mengalahkan Karpov dengan kombinasi taktis yang memukau di endgame. Pertandingan klasik yang membuktikan kedalaman opening ini.</p>
+        </div>
+        <div class="game-card">
+          <p class="game-meta">2003 • Linares Tournament</p>
+          <h4>Kasparov vs Topalov</h4>
+          <p>Kasparov mendemonstrasikan rencana serangan sisi raja yang brilian dari posisi Ruy Lopez, menciptakan pola serangan yang kemudian dipelajari oleh jutaan pemain di seluruh dunia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NAVIGASI -->
+  <div class="next-opening">
+    <div class="next-inner">
+      <a href="index.html" class="back-home">← Kembali ke Home</a>
+      <a href="italian-game.html" class="btn btn-primary">Opening Berikutnya: Italian Game →</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 ChessOpen — Panduan Opening Catur untuk Pemula</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/chess-board.js"></script>
+  <script src="assets/js/ruy-lopez.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
